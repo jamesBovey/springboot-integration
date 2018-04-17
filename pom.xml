@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--基础信息  -->
+    <description>SpringBoot多模块项目</description>
+    <modelVersion>4.0.0</modelVersion>
+    <name>springboot-integration</name>
+    <packaging>pom</packaging>
+
+
+    <!-- 当前项目说明:聚合父工程 -->
+    <groupId>com.zhang</groupId>
+    <artifactId>springboot-integration</artifactId>
+    <version>1.0.0.RELEASE</version>
+
+    <!-- 继承说明：这里继承SpringBoot提供的父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.7.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <!-- 模块说明 这里声明多个子模块-->
+    <modules>
+        <module>cms-web</module>
+        <module>cms-service</module>
+        <module>cms-repo</module>
+        <module>cms-entity</module>
+    </modules>
+
+    <!-- 版本说明：这里统一管理依赖的版本号 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.zhang</groupId>
+                <artifactId>cms-web</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zhang</groupId>
+                <artifactId>cms-service</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zhang</groupId>
+                <artifactId>cms-repo</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zhang</groupId>
+                <artifactId>cms-entity</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.42</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
